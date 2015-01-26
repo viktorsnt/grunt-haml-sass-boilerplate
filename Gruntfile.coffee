@@ -1,4 +1,7 @@
 module.exports = (grunt) ->
+
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
+
   grunt.initConfig
 
     rubyHaml:
@@ -107,17 +110,6 @@ module.exports = (grunt) ->
           title: 'Server started'
           message: 'Server started at http://localhost:1337'
 
-  grunt.loadNpmTasks 'grunt-notify'
-  grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-ruby-haml'
-  grunt.loadNpmTasks 'grunt-sass'
-  grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks 'grunt-contrib-imagemin'
-  grunt.loadNpmTasks 'grunt-contrib-connect'
-  grunt.loadNpmTasks 'grunt-open'
-  grunt.loadNpmTasks 'grunt-svgmin'
-  grunt.loadNpmTasks 'grunt-contrib-copy'
-  grunt.loadNpmTasks 'grunt-coffeelint'
 
   grunt.registerTask 'default', ['rubyHaml', 'sass', 'imagemin', 'svgmin', 'coffeelint', 'coffee', 'copy']
   grunt.registerTask 'server', ['default', 'connect', 'notify:server', 'open:dev', 'watch']
