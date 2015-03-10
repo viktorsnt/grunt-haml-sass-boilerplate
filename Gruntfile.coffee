@@ -47,6 +47,11 @@ module.exports = (grunt) ->
           dest: 'dist/assets/images/'
         ]
 
+    bower_concat:
+      all:
+        dest: 'dist/assets/javascript/plugins.js'
+        cssDest: 'dist/assets/stylesheets/plugins.css'
+
     copy:
       main:
         files: [
@@ -57,7 +62,6 @@ module.exports = (grunt) ->
             dest: 'dist/assets/webfonts'
           }
         ]
-
 
     watch:
       haml:
@@ -111,5 +115,5 @@ module.exports = (grunt) ->
           message: 'Server started at http://localhost:1337'
 
 
-  grunt.registerTask 'default', ['rubyHaml', 'sass', 'imagemin', 'svgmin', 'coffeelint', 'coffee', 'copy']
+  grunt.registerTask 'default', ['bower_concat', 'rubyHaml', 'sass', 'imagemin', 'svgmin', 'coffeelint', 'coffee', 'copy']
   grunt.registerTask 'server', ['default', 'connect', 'notify:server', 'open:dev', 'watch']
