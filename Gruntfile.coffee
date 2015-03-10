@@ -6,20 +6,20 @@ module.exports = (grunt) ->
 
     rubyHaml:
       dist:
-        files: grunt.file.expandMapping(['views/*.haml'], 'dist/',
+        files: grunt.file.expandMapping(['app/views/*.haml'], 'dist/',
           rename: (base, path) ->
-            base + path.replace(/\.haml$/, '.html').replace('views/', '')
+            base + path.replace(/\.haml$/, '.html').replace('app/views/', '')
         )
 
     sass:
       dist:
         files:
-          'dist/assets/stylesheets/main.css': 'assets/stylesheets/main.scss'
+          'dist/assets/stylesheets/main.css': 'app/assets/stylesheets/main.scss'
 
     coffeelint:
       app:
         files:
-          src: ['assets/javascript/**/*.coffee']
+          src: ['app/assets/javascript/**/*.coffee']
 
     coffee:
       options:
@@ -27,13 +27,13 @@ module.exports = (grunt) ->
 
       compile:
         files:
-          'dist/assets/javascript/app.js': ['assets/javascript/**/*.coffee']
+          'dist/assets/javascript/app.js': ['app/assets/javascript/**/*.coffee']
 
     imagemin:
       all:
         files: [
           expand: true
-          cwd: 'assets/images/'
+          cwd: 'app/assets/images/'
           src: ['**/*.{png,jpg,jpeg}']
           dest: 'dist/assets/images/'
         ]
@@ -42,7 +42,7 @@ module.exports = (grunt) ->
       all:
         files: [
           expand: true
-          cwd: 'assets/images/'
+          cwd: 'app/assets/images/'
           src: ['**/*.svg']
           dest: 'dist/assets/images/'
         ]
@@ -52,7 +52,7 @@ module.exports = (grunt) ->
         files: [
           {
             expand: true
-            cwd: 'assets/webfonts'
+            cwd: 'app/assets/webfonts'
             src: '**'
             dest: 'dist/assets/webfonts'
           }
@@ -61,23 +61,23 @@ module.exports = (grunt) ->
 
     watch:
       haml:
-        files: ['views/**/*.haml']
+        files: ['app/views/**/*.haml']
         tasks: ['rubyHaml', 'notify:watch']
 
       coffee:
-        files: ['assets/javascript/**/*.coffee']
+        files: ['app/assets/javascript/**/*.coffee']
         tasks: ['coffeelint', 'coffee', 'notify:watch']
 
       sass:
-        files: ['assets/stylesheets/**/*.scss']
+        files: ['app/assets/stylesheets/**/*.scss']
         tasks: ['sass', 'notify:watch']
 
       img:
-        files: ['assets/images/**/*.{jpg,png,jpeg}']
+        files: ['app/assets/images/**/*.{jpg,png,jpeg}']
         tasks: ['imagemin', 'notify:watch']
 
       webfonts:
-        files: ['assets/webfonts/**']
+        files: ['app/assets/fonts/**']
         tasks: ['copy', 'notify:watch']
 
       dist:
