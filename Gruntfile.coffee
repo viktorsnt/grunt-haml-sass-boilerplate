@@ -116,4 +116,5 @@ module.exports = (grunt) ->
 
 
   grunt.registerTask 'default', ['bower_concat', 'rubyHaml', 'sass', 'imagemin', 'svgmin', 'coffeelint', 'coffee', 'copy']
+  grunt.registerTask 'dist', ['bower_concat', 'rubyHaml', 'sass', 'imagemin', 'svgmin', 'coffeelint', 'coffee', 'copy']
   grunt.registerTask 'server', ['default', 'connect', 'notify:server', 'open:dev', 'watch']
