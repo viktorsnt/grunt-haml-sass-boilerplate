@@ -28,25 +28,26 @@ $ grunt server
 ```
 ├── Gruntfile.coffee
 ├── LICENSE
-├── Package.json
+├── package.json
 ├── README.md
-├── assets
-│   ├── images
-│   ├── javascript
-│   └── stylesheets
-│       ├── main.scss
-│       └── vendor
+├── app
+│   ├── assets
+│   │   ├── images
+│   │   ├── javascript
+│   │   └── stylesheets
+│   │       ├── main.scss
+│   │       └── vendor
+│   └── views
+│       ├── frontpage.haml
+│       └── shared
+│           ├── head.haml
+│           └── javascript.haml
 ├── dist
 │   ├── assets
 │   │   ├── images
 │   │   └── stylesheets
 │   │       └── main.css
 │   └── frontpage.html
-└── views
-    ├── frontpage.haml
-    └── shared
-        ├── head.haml
-        └── javascript.haml
 ```
 
 ## Author
