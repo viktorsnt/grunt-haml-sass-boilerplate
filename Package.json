@@ -1,19 +1,24 @@
 {
-  "name": "Form5-HAML-boilerplate",
-  "version": "0.1.1",
+  "name": "Grunt-haml-sass-boilerplate",
+  "version": "0.1.2",
+  "authors": [
+    "Victor Almeida <viktorsnt@gmail.com>"
+  ],
+  "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-ruby-haml": "0.0.1",
-    "underscore": "~1.5.1",
-    "grunt-sass": "~0.6.1",
-    "grunt-notify": "~0.2.13",
-    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.5",
+    "grunt-bower-concat": "^0.4.0",
+    "grunt-coffeelint": "0.0.7",
+    "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-connect": "~0.3.0",
     "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-imagemin": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-notify": "~0.2.13",
     "grunt-open": "~0.2.2",
-    "grunt-contrib-coffee": "~0.7.0",
-    "grunt-coffeelint": "0.0.7",
+    "grunt-ruby-haml": "0.0.1",
+    "grunt-sass": "~0.6.1",
     "grunt-svgmin": "~0.2.0",
-    "grunt-contrib-imagemin": "~0.3.0"
+    "underscore": "~1.5.1"
   }
 }
