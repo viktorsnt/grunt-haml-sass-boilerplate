@@ -1,0 +1,19 @@
+{
+  "name": "grunt-haml-sass-boilerplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/viktorsnt/grunt-haml-sass-boilerplate",
+  "authors": [
+    "Victor Almeida <viktorsnt@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
